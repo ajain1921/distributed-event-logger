@@ -1,10 +1,8 @@
 all: node logger
 .PHONY: all
 
-client: cmd/client/main.go internal
-	go build -o bin/client cmd/client/main.go
+node: cmd/node/main.go
+	go build -o bin/node cmd/node/main.go
 
-server: cmd/server/main.go internal
-	go build -o bin/server cmd/server/main.go
-
-internal: internal/config/config.go
+logger: cmd/logger/main.go
+	go build -o bin/logger cmd/logger/main.go
